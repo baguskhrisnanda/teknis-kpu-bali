@@ -2,22 +2,18 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-
-  <!-- PWA -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#800000">
+    <meta name="theme-color" content="#800000">
   <link rel="apple-touch-icon" href="maskot-192.png">
 
-  <!-- Mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Font Awesome -->
+  
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="KPU BALI">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <title>KPU Provinsi Bali</title>
-
+  
   <style>
-    /* === CSS KAMU (TIDAK DIUBAH) === */
     :root {
       --bg-gradient: linear-gradient(135deg, #4d0000 0%, #800000 50%, #4d0000 100%);
       --btn-color: #5e0000;
@@ -26,7 +22,9 @@
       --white: #ffffff;
       --glass: rgba(255, 255, 255, 0.05);
     }
+
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
     body {
       margin: 0; padding: 0;
       font-family: 'Segoe UI', Roboto, sans-serif;
@@ -36,12 +34,14 @@
       display: flex; justify-content: center;
       min-height: 100vh; overflow-x: hidden;
     }
+
     .wrapper {
       width: 100%; max-width: 480px;
       padding: 40px 20px;
       display: flex; flex-direction: column; align-items: center;
       min-height: 100vh;
     }
+
     .logo-container {
       background: var(--glass);
       padding: 15px; border-radius: 50%;
@@ -50,65 +50,82 @@
       margin-bottom: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
-    .logo-img { width: 75px; }
+
+    .logo-img { width: 75px; height: auto; filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5)); }
+
     h1 {
       font-size: 1.25rem; color: var(--gold-primary);
-      margin: 0; text-transform: uppercase; text-align: center;
+      margin: 0; letter-spacing: 1.5px;
+      text-transform: uppercase; text-align: center;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
+
     .sub-title {
-      font-size: 0.75rem; margin: 10px 0 35px;
-      text-align: center; border-bottom: 1px solid var(--gold-primary);
-      padding-bottom: 10px;
+      font-size: 0.75rem; color: rgba(255, 255, 255, 0.9);
+      margin: 10px 0 35px 0; text-align: center;
+      border-bottom: 1px solid var(--gold-primary);
+      padding-bottom: 10px; width: 90%;
     }
+
+    .button-container { width: 100%; }
+
     .btn {
-      display: block;
-      background: var(--btn-color);
-      color: var(--gold-light);
-      text-decoration: none;
-      padding: 18px;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      text-align: center;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--btn-color); color: var(--gold-light);
+      text-decoration: none; margin-bottom: 15px;
+      padding: 18px 15px; border-radius: 12px;
+      font-weight: 600; font-size: 0.85rem;
       border: 1.5px solid var(--gold-primary);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      text-transform: uppercase;
     }
-    .social-group {
-      margin-top: 25px;
-      display: flex;
-      gap: 15px;
-    }
+
+    .btn:active { transform: scale(0.98); background: #440000; }
+
+    .social-group { margin-top: 25px; display: flex; gap: 15px; }
+
     .social-link {
       width: 48px; height: 48px;
       background: var(--glass);
       display: flex; align-items: center; justify-content: center;
-      border-radius: 50%;
-      color: #fff;
-      text-decoration: none;
+      border-radius: 50%; color: var(--white);
+      text-decoration: none; font-size: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
+
     footer {
-      margin-top: auto;
-      font-size: 0.7rem;
+      margin-top: auto; padding-top: 40px;
+      text-align: center; font-size: 0.7rem;
       color: rgba(255, 215, 0, 0.7);
     }
+
+    .copyright { display: flex; align-items: center; justify-content: center; gap: 5px; }
   </style>
 </head>
-
 <body>
   <div class="wrapper">
     <div class="logo-container">
-      <img src="icons/icon-192.png" class="logo-img">
+      <img src="maskot-192.png" class="logo-img">
     </div>
-
     <h1>KPU PROVINSI BALI</h1>
     <p class="sub-title">SUB BAGIAN TEKNIS PENYELENGGARAAN PEMILU</p>
-
-    <a class="btn" href="https://drive.google.com/drive/folders/1hpUMEIwSD2xsZhgXfIbzYF071P-AC2Z0" target="_blank">Pemutakhiran Data Partai Politik</a>
-
-    <div class="social-group">
-      <a class="social-link" href="https://www.instagram.com/kpu_bali" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="button-container">
+      <a href="https://drive.google.com/drive/folders/1hpUMEIwSD2xsZhgXfIbzYF071P-AC2Z0?usp=sharing" class="btn" target="_blank">Pemutakhiran Data Partai Politik</a>
+      <a href="https://drive.google.com/drive/folders/1pyteV88NMLaC1fzn6l1GDcDjZQQFzhG3?usp=sharing" class="btn" target="_blank">Pencalonan</a>
+      <a href="https://drive.google.com/drive/folders/1a1XsAW8CBnAH4zddxM86WjMHOraL5WqO?usp=sharing" class="btn" target="_blank">Dana Kampanye</a>
+      <a href="https://drive.google.com/drive/folders/1QL0F-aLCIdtHZFtZjd9U6ma3X1KC1f_X?usp=sharing" class="btn" target="_blank">Penggantian Antar Waktu</a>
     </div>
-
+    <div class="social-group">
+      <a href="https://www.instagram.com/kpu_bali?igsh=azU2cGI4bno3ZXJ0" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/1MomBDXoRe/" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://youtube.com/@kpudbali?si=_VsN8vgoLLydtoV6" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://bali.kpu.go.id/" class="social-link" target="_blank"><i class="fas fa-globe"></i></a>
+    </div>
     <footer>
-      © <script>document.write(new Date().getFullYear())</script> KPU Provinsi Bali
+      <div class="copyright">
+        &copy; <script>document.write(new Date().getFullYear())</script> copyright kpuprovinsibali
+      </div>
     </footer>
   </div>
 </body>
