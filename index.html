@@ -1,134 +1,306 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="maskot-32.png">
-  <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#800000">
-  <link rel="apple-touch-icon" href="maskot-192.png">
-  <title>SIMPATIK BALI</title>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="maskot-32.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#800000">
+<link rel="apple-touch-icon" href="maskot-192.png">
+<title>SIMPATIK BALI</title>
 
-  
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="SIMPATIK BALI">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <style>
-    :root {
-      --bg-gradient: linear-gradient(135deg, #4d0000 0%, #800000 50%, #4d0000 100%);
-      --btn-color: #5e0000;
-      --gold-primary: #D4AF37;
-      --gold-light: #FFDF00;
-      --white: #ffffff;
-      --glass: rgba(255, 255, 255, 0.05);
-    }
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SIMPATIK BALI">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    body {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg-gradient);
-      background-attachment: fixed;
-      color: var(--white);
-      display: flex; justify-content: center;
-      min-height: 100vh; overflow-x: hidden;
-    }
+<style>
+:root {
+  --bg-gradient: linear-gradient(135deg, #4d0000 0%, #800000 50%, #4d0000 100%);
+  --btn-color: #5e0000;
+  --gold-primary: #D4AF37;
+  --gold-light: #FFDF00;
+  --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.05);
+}
 
-    .wrapper {
-      width: 100%; max-width: 480px;
-      padding: 40px 20px;
-      display: flex; flex-direction: column; align-items: center;
-      min-height: 100vh;
-    }
+* { box-sizing: border-box; }
 
-    .logo-container {
-      background: var(--glass);
-      padding: 15px; border-radius: 50%;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      margin-bottom: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
 
-    .logo-img { width: 75px; height: auto; filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5)); }
+.wrapper {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
 
-    h1 {
-      font-size: 1.25rem; color: var(--gold-primary);
-      margin: 0; letter-spacing: 1.5px;
-      text-transform: uppercase; text-align: center;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
+.logo-container {
+  background: var(--glass);
+  padding: 15px;
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(212,175,55,0.3);
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
 
-    .sub-title {
-      font-size: 0.75rem; color: rgba(255, 255, 255, 0.9);
-      margin: 10px 0 35px 0; text-align: center;
-      border-bottom: 1px solid var(--gold-primary);
-      padding-bottom: 10px; width: 90%;
-    }
+.logo-img {
+  width: 75px;
+  filter: drop-shadow(0 0 5px rgba(212,175,55,0.5));
+}
 
-    .button-container { width: 100%; }
+h1 {
+  font-size: 1.25rem;
+  color: var(--gold-primary);
+  margin: 0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+}
 
-    .btn {
-      display: flex; align-items: center; justify-content: center;
-      background: var(--btn-color); color: var(--gold-light);
-      text-decoration: none; margin-bottom: 15px;
-      padding: 18px 15px; border-radius: 12px;
-      font-weight: 600; font-size: 0.85rem;
-      border: 1.5px solid var(--gold-primary);
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      text-transform: uppercase;
-    }
+.sub-title {
+  font-size: 0.75rem;
+  margin: 10px 0 35px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--gold-primary);
+  padding-bottom: 10px;
+  width: 90%;
+}
 
-    .btn:active { transform: scale(0.98); background: #440000; }
+.button-container { width: 100%; }
 
-    .social-group { margin-top: 25px; display: flex; gap: 15px; }
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--btn-color);
+  color: var(--gold-light);
+  text-decoration: none;
+  margin-bottom: 15px;
+  padding: 18px 15px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1.5px solid var(--gold-primary);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  text-transform: uppercase;
+  cursor: pointer;
+}
 
-    .social-link {
-      width: 48px; height: 48px;
-      background: var(--glass);
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 50%; color: var(--white);
-      text-decoration: none; font-size: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+.toggle i {
+  position: absolute;
+  right: 20px;   /* jarak dari kanan */
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
 
-    footer {
-      margin-top: auto; padding-top: 40px;
-      text-align: center; font-size: 0.7rem;
-      color: rgba(255, 215, 0, 0.7);
-    }
+.btn:active {
+  transform: scale(0.98);
+  background: #440000;
+}
 
-    .copyright { display: flex; align-items: center; justify-content: center; gap: 5px; }
-  </style>
+.dropdown { width: 100%; }
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-menu.show { display: flex; }
+
+.dropdown-item {
+  background: #440000;
+  font-size: 0.75rem;
+  padding: 15px;
+  justify-content: center;
+}
+
+.dropdown-item:hover { background: #5e0000; }
+
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.social-group {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  width: 48px;
+  height: 48px;
+  background: var(--glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+footer {
+  margin-top: auto;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(255,215,0,0.7);
+}
+</style>
 </head>
+
 <body>
-  <div class="wrapper">
-    <div class="logo-container">
-      <img src="maskot-192.png" class="logo-img">
+<div class="wrapper">
+
+<div class="logo-container">
+  <img src="maskot-192.png" class="logo-img">
+</div>
+
+<h1>KPU PROVINSI BALI</h1>
+<p class="sub-title">SUB BAGIAN TEKNIS PENYELENGGARAAN PEMILU</p>
+
+<div class="button-container">
+
+  <!-- PEMUTAKHIRAN -->
+  <div class="dropdown">
+    <div class="btn toggle">
+      <span>PEMUTAKHIRAN DATA PARTAI POLITIK</span>
+      <i class="fas fa-chevron-down"></i>
     </div>
-    <h1>KPU PROVINSI BALI</h1>
-    <p class="sub-title">SUB BAGIAN TEKNIS PENYELENGGARAAN PEMILU</p>
-    <div class="button-container">
-      <a href="https://drive.google.com/drive/folders/1orneOjo5aOG8dYCeJ03M5XheeEBhj81f?usp=sharing" class="btn" target="_blank">Pemutakhiran Data Partai Politik</a>
-      <a href="https://drive.google.com/drive/folders/19u8psOKutlek7IYbkKinfSA_wY1bJIT7?usp=sharing" class="btn" target="_blank">Pencalonan</a>
-      <a href="https://drive.google.com/drive/folders/1R6O1Pb4MRwI9vmRkOxEirfg6I5jbXi0-?usp=sharing" class="btn" target="_blank">Dana Kampanye</a>
-      <a href="https://drive.google.com/drive/folders/1rXs4AY6yos_E5PcrlmAzGSzmkg7aShSE?usp=sharing" class="btn" target="_blank">Penggantian Antar Waktu</a>
+    <div class="dropdown-menu">
+      <a target="_blank"
+       rel="noopener noreferrer" 
+          href="https://sipol.kpu.go.id/" class="btn dropdown-item">SIPOL</a>
+      <a target="_blank"
+       rel="noopener noreferrer"
+          href="https://drive.google.com/drive/folders/1orneOjo5aOG8dYCeJ03M5XheeEBhj81f?usp=sharing" class="btn dropdown-item">KELENGKAPAN</a>
     </div>
-    <div class="social-group">
-      <a href="https://www.instagram.com/kpu_bali?igsh=azU2cGI4bno3ZXJ0" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/share/1MomBDXoRe/" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://youtube.com/@kpudbali?si=_VsN8vgoLLydtoV6" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://bali.kpu.go.id/" class="social-link" target="_blank"><i class="fas fa-globe"></i></a>
-    </div>
-    <footer>
-      <div class="copyright">
-        &copy; <script>document.write(new Date().getFullYear())</script> copyright kpuprovinsibali
-      </div>
-    </footer>
   </div>
+
+  <!-- PENCALONAN -->
+  <div class="dropdown">
+    <div class="btn toggle">
+      <span>PENCALONAN</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="dropdown-menu">
+      <a target="_blank"
+      rel="noopener noreferrer"
+         href="#" class="btn dropdown-item">SILON</a>
+      <a target="_blank"
+      rel="noopener noreferrer"
+         href="https://drive.google.com/drive/folders/19u8psOKutlek7IYbkKinfSA_wY1bJIT7?usp=sharing" class="btn dropdown-item">KELENGKAPAN</a>
+    </div>
+  </div>
+
+  <!-- DANA KAMPANYE -->
+  <div class="dropdown">
+    <div class="btn toggle">
+      <span>DANA KAMPANYE</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="dropdown-menu">
+      <a target="_blank"
+      rel="noopener noreferrer"
+         href="#" class="btn dropdown-item">SIKADEKA</a>
+      <a target="_blank"
+      rel="noopener noreferrer"
+         href="https://drive.google.com/drive/folders/1R6O1Pb4MRwI9vmRkOxEirfg6I5jbXi0-?usp=sharing" class="btn dropdown-item">KELENGKAPAN</a>
+    </div>
+  </div>
+
+  <!-- PAW -->
+  <div class="dropdown">
+    <div class="btn toggle">
+      <span>PENGGANTIAN ANTAR WAKTU</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="dropdown-menu">
+      <a target="_blank"
+      rel="noopener noreferrer"
+         href="https://simpaw.kpu.go.id/" class="btn dropdown-item">SIMPAW</a>
+      <a target="_blank"
+      rel="noopener noreferrer"
+         href="https://drive.google.com/drive/folders/1rXs4AY6yos_E5PcrlmAzGSzmkg7aShSE?usp=sharing" class="btn dropdown-item">KELENGKAPAN</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="social-group">
+  <a href="https://www.instagram.com/kpu_bali?igsh=azU2cGI4bno3ZXJ0" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com/share/1MomBDXoRe/" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://youtube.com/@kpudbali?si=_VsN8vgoLLydtoV6" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+  <a href="https://bali.kpu.go.id/" class="social-link" target="_blank"><i class="fas fa-globe"></i></a>
+</div>
+
+<footer>
+  &copy; <script>document.write(new Date().getFullYear())</script> copyright kpuprovinsibali
+</footer>
+
+</div>
+
+<script>
+const toggles = document.querySelectorAll(".toggle");
+
+toggles.forEach(toggle => {
+  toggle.addEventListener("click", function(e) {
+    e.stopPropagation();
+
+    const menu = this.nextElementSibling;
+    const icon = this.querySelector("i");
+
+    // Tutup dropdown lain
+    document.querySelectorAll(".dropdown-menu").forEach(m => {
+      if (m !== menu) m.classList.remove("show");
+    });
+
+    document.querySelectorAll(".toggle i").forEach(i => {
+      if (i !== icon) i.classList.remove("rotate");
+    });
+
+    // Toggle dropdown aktif
+    menu.classList.toggle("show");
+    icon.classList.toggle("rotate");
+  });
+});
+
+// Klik luar
+document.addEventListener("click", function() {
+  document.querySelectorAll(".dropdown-menu").forEach(menu => {
+    menu.classList.remove("show");
+  });
+
+  document.querySelectorAll(".toggle i").forEach(icon => {
+    icon.classList.remove("rotate");
+  });
+});
+</script>
+
 </body>
 </html>
